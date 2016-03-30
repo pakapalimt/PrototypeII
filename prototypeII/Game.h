@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Pakapan. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAITracker.h"
 
 NSInteger CategoryLoaded;
 int QuestionSelected;
@@ -18,7 +22,7 @@ int LivesNumber;
 BOOL GameInProgress;
 
 
-@interface Game : UIViewController
+@interface Game : GAITrackedViewController
 {
     
     IBOutlet UILabel *CategorySelected;

@@ -7,14 +7,28 @@
 //
 
 #import "prototypeIIAppDelegate.h"
+#import "GAI.h"
 
 @implementation prototypeIIAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    
+    // 1
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // 2
+    [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
+    
+    // 3
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // 4
+    //id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-66848787-1"];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-55811115-7"];
     return YES;
-}
+    }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

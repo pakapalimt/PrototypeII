@@ -18,13 +18,28 @@
 
 -(IBAction)Button1:(id)sender{
     
+    //////////////////////// Google Analytics for random question button press ////////////////
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Game"
+                                                          action:@"ButtonPress"
+                                                           label:@"game_question"
+                                                           value:nil] build]];
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    
     [[NSUserDefaults standardUserDefaults] setInteger:Category1SelectedNumber forKey:@"CategorySaved"];
     
 }
 
 -(IBAction)Button2:(id)sender{
+    //////////////////////// Google Analytics for random question button press ////////////////
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Game"
+                                                          action:@"ButtonPress"
+                                                           label:@"game_question"
+                                                           value:nil] build]];
     
-    
+    ///////////////////////////////////////////////////////////////////////////////////////////
     [[NSUserDefaults standardUserDefaults] setInteger:Category2SelectedNumber forKey:@"CategorySaved"];
     
 }

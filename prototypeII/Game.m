@@ -70,6 +70,15 @@
 
 -(IBAction)Answer1:(id)sender{
     
+    //////////////////////// Google Analytics for answer button press ////////////////
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Game_test"
+                                                          action:@"ButtonPress"
+                                                           label:@"game_answer"
+                                                           value:nil] build]];
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////
+   
     if (Answer1Correct == YES) {
         [self RightAnswer];
     }
@@ -80,6 +89,16 @@
 }
 
 -(IBAction)Answer2:(id)sender{
+    
+    //////////////////////// Google Analytics for answer button press ////////////////
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Game_test"
+                                                          action:@"ButtonPress"
+                                                           label:@"game_answer"
+                                                           value:nil] build]];
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    
     
     if (Answer2Correct == YES) {
         [self RightAnswer];
@@ -92,6 +111,15 @@
 
 -(IBAction)Answer3:(id)sender{
     
+    //////////////////////// Google Analytics for answer button press ////////////////
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Game_test"
+                                                          action:@"ButtonPress"
+                                                           label:@"game_answer"
+                                                           value:nil] build]];
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    
     if (Answer3Correct == YES) {
         [self RightAnswer];
     }
@@ -101,6 +129,15 @@
     
 }
 -(IBAction)Answer4:(id)sender{
+    
+    //////////////////////// Google Analytics for answer button press ////////////////
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Game_test"
+                                                          action:@"ButtonPress"
+                                                           label:@"game_answer"
+                                                           value:nil] build]];
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////
     
     if (Answer4Correct == YES) {
         [self RightAnswer];
@@ -115,20 +152,20 @@
     
     switch (QuestionSelected) {
         case 0:
-            QuestionText.text = [NSString stringWithFormat:@"What does IPENZ stand for?"];
-            [Answer1 setTitle:@"Integration Plan for Engineers in New Zealand" forState: UIControlStateNormal];
-            [Answer2 setTitle:@"Integrated Program for Engineers in New Zealand" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Institution of Professional Engineers New Zealand" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"International Practices of Engineers New Zealand" forState:UIControlStateNormal];
-            Answer3Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"Which of the following is NOT the guideline stated by IPENZ?"];
+            [Answer1 setTitle:@"Report any possible risks involved in your engineering activities to the community" forState: UIControlStateNormal];
+            [Answer2 setTitle:@"Give priority to the safety and well-being of the community" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Ensure that the reasonable steps are taken to minimize the risk of loss of life, injury, and suffering" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Assess and take reasonable steps to minimize potential dangers involved in your engineering activities" forState:UIControlStateNormal];
+            Answer1Correct = YES;
             break;
         case 1:
-            QuestionText.text = [NSString stringWithFormat:@"Which of the following is one of the five fundamental ethical values given by IPENZ?"];
-            [Answer1 setTitle:@"Protection of life and safeguarding people" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Respecting other engineers" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Being a part of engineering community" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"Protection and respecting intellectual property  " forState:UIControlStateNormal];
-            Answer1Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"Which of the following is NOT the guideline stated by IPENZ?"];
+            [Answer1 setTitle:@"Exercise your skills to the best of your ability for the benefit of your client" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Give honest engineering decisions and recommendations" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Disclose your experience and competence to your employers before stat any engineering activities" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Accept any personal responsibility for work done under your supervision" forState:UIControlStateNormal];
+            Answer3Correct = YES;
             break;
                default:
             break;
@@ -140,19 +177,19 @@
     
     switch (QuestionSelected) {
         case 0:
-            QuestionText.text = [NSString stringWithFormat:@"Which of the following are NOT the values of the codes of ethics?"];
-            [Answer1 setTitle:@"Members shall develop their own engineering’s knowledge" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Member shall work within their levels of competence" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Member shall pursue a professional engineering certificate" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"Member shall recognize the need for sustainable management of the planet’s resource" forState:UIControlStateNormal];
-            Answer3Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"Which of the following is NOT the guideline stated by IPENZ?"];
+            [Answer1 setTitle:@"Ensure that anyone working under your authority is competence for the assigned tasks" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Before reviewing other engineers’ works, inform their employers and clients" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Disclose any financial or other interest that may affect your professional judgement" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Do not promise to give or accept anything of substantial value by way of inducement" forState:UIControlStateNormal];
+            Answer2Correct = YES;
             break;
         case 1:
-            QuestionText.text = [NSString stringWithFormat:@"What is the obligation owed to other engineers?"];
-            [Answer1 setTitle:@"Member shall inform the other engineers before reviewing their works" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Member DOES NOT need to inform other engineers’ work before reviewing their works if it is immediate risk to people health" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Member shall investigate the matters concerned before commenting on other engineers’ works" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"All of the above" forState:UIControlStateNormal];
+            QuestionText.text = [NSString stringWithFormat:@"Which of the following is NOT the guideline stated by IPENZ?"];
+            [Answer1 setTitle:@"Give honest recommendations or opinion" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Accept personal responsibility for work done by you or under your supervision" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Do not misrepresent your levels of experience or competence" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Do not provide engineering advice to more than one party" forState:UIControlStateNormal];
             Answer4Correct = YES;
             break;
                 default:
@@ -165,19 +202,19 @@
     
     switch (QuestionSelected) {
         case 0:
-            QuestionText.text = [NSString stringWithFormat:@"What is NOT the general obligation to society?"];
-            [Answer1 setTitle:@"Have regard to effects on environment" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Takes reasonable steps to safeguard health and safety" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Act with honest, objectivity, and integrity" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"Not disclose confidential information of a client to society" forState:UIControlStateNormal];
-            Answer4Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"IPENZ has guided that engineering should care for environment, which of the following is NOT mentioned in the guideline?"];
+            [Answer1 setTitle:@"Minimize the generation of waste" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Avoid the use of green house gases" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Avoid or mitigate the engineering activities that adverse impact the environment" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Use resource efficiently" forState:UIControlStateNormal];
+            Answer2Correct = YES;
             break;
         case 1:
-            QuestionText.text = [NSString stringWithFormat:@"What is the obligation to employers and clients?"];
-            [Answer1 setTitle:@"Not disclose confidential information" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Not misuse confidential information for personal benefit" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Disclose conflicts of interest" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"All of the above" forState:UIControlStateNormal];
+            QuestionText.text = [NSString stringWithFormat:@"Which of the following is NOT the guideline stated by IPENZ?"];
+            [Answer1 setTitle:@"Improve and update your understanding of your engineering" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Exchange knowledge with your professional colleagues" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Share your experience in particular about success and failure" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Obtain certificates that related to your engineering activities" forState:UIControlStateNormal];
             Answer4Correct = YES;
             break;
         default:
@@ -191,20 +228,20 @@
     
     switch (QuestionSelected) {
         case 0:
-            QuestionText.text = [NSString stringWithFormat:@"Which of the following is NOT the guideline of the code Sustaining Engineering Knowledge?"];
-            [Answer1 setTitle:@"Sharing public domain engineering knowledge with other engineers" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Contributing to the collective wisdom of the profession" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Drawing the attention of world wide engineering activities" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"Sharing information about your experiences wherever possible" forState:UIControlStateNormal];
+            QuestionText.text = [NSString stringWithFormat:@"WWhich of the following is NOT the guideline stated by IPENZ?"];
+            [Answer1 setTitle:@"Endeavour to identify, inform, and consult anyone affected or likely to be affected by your engineering activities" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Use your engineering knowledge to contribute to community affair or debate" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Ask for permission from the authority before start any engineering activities" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Consider for the values and cultural sensitivities of all group within the community before undertake engineering activities" forState:UIControlStateNormal];
             Answer3Correct = YES;
             break;
         case 1:
-            QuestionText.text = [NSString stringWithFormat:@"Which of the following consequence is considered as significant important which engineers must inform and advice?"];
-            [Answer1 setTitle:@"Effects on health or safety of people" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Damage to property" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Damage to the environment" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"All of the above" forState:UIControlStateNormal];
-            Answer2Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"In obligations to employers and clients, which of the following act is NOT mentioned in the minimum standards of ethical behavior?"];
+            [Answer1 setTitle:@"You must disclose conflicts of interest if it is likely to affect your decision on any engineering activities" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"You must not disclose confidential information of clients without an agreement" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"You must not use another person’s confidential information for your own personal benefits" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"You must make an agreement that states your responsibilities with clients before undertake any engineering activities" forState:UIControlStateNormal];
+            Answer4Correct = YES;
             break;
         default:
             break;
@@ -216,20 +253,20 @@
     
     switch (QuestionSelected) {
         case 0:
-            QuestionText.text = [NSString stringWithFormat:@"Which of the following statement is inappropriate performance by members?"];
-            [Answer1 setTitle:@"Members may disclose confidential information of client if the information harms safety of people" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Member may review and comment on other engineers’ work without informing them upon client’s request" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Members shall undertake engineering activities only within his or her competence" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"Members must offer his or her professional advice if there are risks of significant damage to the environment" forState:UIControlStateNormal];
-            Answer2Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"In professional obligation, which of the following act is NOT mentioned in the minimum standards of ethical behavior?"];
+            [Answer1 setTitle:@"If your clients do not accept your professional advise, you must inform them about possible risks and consequences" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"You must not misrepresent your membership status" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"You must not give any person anything that may improper influence their decisions related to your engineering activities" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"You must seek for third parties or other members’ advices before you undertake any engineering activities that are not your competence" forState:UIControlStateNormal];
+            Answer4Correct = YES;
             break;
         case 1:
-            QuestionText.text = [NSString stringWithFormat:@"Which of the following members must NOT perform?"];
-            [Answer1 setTitle:@"Misrepresent his or her competence" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Accept anything of substantial value intend to improperly influence his or her professional engineering decisions" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Give anything of substantial value intend to benefits members’ engineering activities" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"All of the above " forState:UIControlStateNormal];
-            Answer4Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"Which of the following act is BEYOND MINIMUM STANDARDS of ethical behavior?"];
+            [Answer1 setTitle:@"Disclose any confidential information of client if the information risk to safety of people" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Disclose any financial or other interest that may affect your judgement on any engineering activities to clients, and employers" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Analyze your competence and report it to clients and employers before undertake any engineering activities" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Not use another person’s confidential information for your own personal benefit" forState:UIControlStateNormal];
+            Answer3Correct = YES;
             break;
         default:
             break;
@@ -240,20 +277,20 @@
     
     switch (QuestionSelected) {
         case 0:
-            QuestionText.text = [NSString stringWithFormat:@"Which of the following is one of the five codes of ethics?"];
-            [Answer1 setTitle:@"Sustainable Management and Care for the Environment" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Commitment to Engineering Community Activities" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Protection of nation economy" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"Preventing risk of people health" forState:UIControlStateNormal];
-            Answer1Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"Which of the following act is BEYOND MINIMUM STANDARDS of ethical behavior?"];
+            [Answer1 setTitle:@"Comment on other engineers’ work without inform them if the works immediate risk of damage to property" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Disclose clients’ confidential information if law requires it" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Ask other IPENZ members to analyze your competence before undertake any engineering activities" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Act honestly and with objectivity and integrity in the course of your engineering activities" forState:UIControlStateNormal];
+            Answer3Correct = YES;
             break;
         case 1:
-            QuestionText.text = [NSString stringWithFormat:@"Which of the following is UNACCEPTABLE performance by members"];
-            [Answer1 setTitle:@"Members comments on other engineers’ works without informing them because the works immediate risk of damage to the environment" forState:UIControlStateNormal];
-            [Answer2 setTitle:@"Members disclose confidential information if it is required by law" forState:UIControlStateNormal];
-            [Answer3 setTitle:@"Members misrepresent his or her competence for the highest benefits of engineering activities" forState:UIControlStateNormal];
-            [Answer4 setTitle:@"Members act honestly and with objectivity and integrity in his or her engineering activities" forState:UIControlStateNormal];
-            Answer2Correct = YES;
+            QuestionText.text = [NSString stringWithFormat:@"Which of the following act is BEYOND MINIMUM STANDARDS of ethical behavior when reviewing other engineers’ work?"];
+            [Answer1 setTitle:@"Inform the other engineers, their clients, and IPENZ of the proposed review before start it" forState:UIControlStateNormal];
+            [Answer2 setTitle:@"Immediate review the other engineers’ works with inform them if the works is being harm to the health of people" forState:UIControlStateNormal];
+            [Answer3 setTitle:@"Investigate the matters concerned before comment on the other engineers’ works" forState:UIControlStateNormal];
+            [Answer4 setTitle:@"Immediate review the other engineers’ works without inform them if the works risk of damage the environment" forState:UIControlStateNormal];
+            Answer1Correct = YES;
             break;
         default:
             break;
@@ -278,7 +315,7 @@
 
 - (void)viewDidLoad
 {
-
+    self.screenName = @"Game";
     
     if (GameInProgress == NO) {
         LivesNumber = 3;
@@ -348,4 +385,7 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 @end

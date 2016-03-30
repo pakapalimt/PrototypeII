@@ -8,9 +8,34 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "GAITrackedViewController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAITracker.h"
 
-@interface video : UIViewController
+// add header for audio
+#import "YMCAudioPlayer.h"
+
+@interface video : GAITrackedViewController
 
 -(IBAction)playvideo;
+
+//AUDIO//
+
+@property (nonatomic, strong) YMCAudioPlayer *audioPlayer;
+
+@property (weak, nonatomic) IBOutlet UISlider *currentTimeSlider;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UILabel *duration;
+@property (weak, nonatomic) IBOutlet UILabel *timeElapsed;
+
+
+@property BOOL isPaused;
+@property BOOL scrubbing;
+
+@property NSTimer *timer;
+
+
+
 
 @end

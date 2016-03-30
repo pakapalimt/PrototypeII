@@ -45,6 +45,7 @@ CAShapeLayer *openMenuShape;
 CAShapeLayer *closedMenuShape;
 
 - (void)viewDidLoad {
+    self.screenName = @"Code_3";
     [super viewDidLoad];
     shouldDisplayDropShape = YES;
     fadeAlpha = 0.5f;

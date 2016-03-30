@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  prototypeII
+//
+//  Created by Pakapan on 27/08/15.
+//  Copyright (c) 2015 Pakapan. All rights reserved.
+//
+#import "GAI.h"
+#import "GAIFields.h"
+#ifndef prototypeII_PrefixHeader_pch
+#define prototypeII_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif

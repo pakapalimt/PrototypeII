@@ -8,8 +8,16 @@
 
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAITracker.h"
 
-@interface ViewController : UIViewController
+
+// add header for audio
+#import "YMCAudioPlayer.h"
+
+@interface ViewController : GAITrackedViewController
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 
@@ -17,5 +25,21 @@
 
 - (IBAction)pinch:(UIGestureRecognizer *)sender;
 @property (strong, nonatomic) IBOutlet UITextView *textview;
+
+//AUDIO//
+
+@property (nonatomic, strong) YMCAudioPlayer *audioPlayer;
+
+@property (weak, nonatomic) IBOutlet UISlider *currentTimeSlider;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UILabel *duration;
+@property (weak, nonatomic) IBOutlet UILabel *timeElapsed;
+
+
+@property BOOL isPaused;
+@property BOOL scrubbing;
+
+@property NSTimer *timer;
+
 
 @end

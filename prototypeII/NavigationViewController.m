@@ -29,10 +29,30 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    
     menu = @[@"first", @"second", @"third", @"forth", @"fifth"];
     
- }
+    ////////////Track The screen view from sided bar menu ///////////
+    ///////////Cannot be tracked as an event because it is UITableView ///////
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"first"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+    [tracker set:kGAIScreenName value:@"second"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+    [tracker set:kGAIScreenName value:@"third"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+    [tracker set:kGAIScreenName value:@"forth"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+    [tracker set:kGAIScreenName value:@"fifth"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+     [super viewDidLoad];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -68,8 +88,6 @@
     return cell;
 }
 
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 
@@ -90,5 +108,6 @@
 
 }
 
-
 @end
+
+

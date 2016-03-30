@@ -7,6 +7,9 @@
 //
 
 #import "DropdownMenuController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAITracker.h"
 
 @interface MyDropdownMenuController : DropdownMenuController
 

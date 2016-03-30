@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAITracker.h"
 
 int Category1Number;
 int Category2Number;

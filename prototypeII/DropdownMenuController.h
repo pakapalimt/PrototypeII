@@ -21,8 +21,9 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface DropdownMenuController : UIViewController
+@interface DropdownMenuController : GAITrackedViewController
 
 @property (weak,nonatomic) UIViewController *currentViewController;
 @property (strong, nonatomic) NSString *currentSegueIdentifier;

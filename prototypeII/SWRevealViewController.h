@@ -50,6 +50,7 @@ typedef enum
 @property (nonatomic) UIViewController *rightViewController;
 - (void)setRightViewController:(UIViewController *)rightViewController animated:(BOOL)animated;
 
+
 // Front view controller, can be nil on initialization but must be supplied by the time the view is loaded
 @property (nonatomic) UIViewController *frontViewController;
 - (void)setFrontViewController:(UIViewController *)frontViewController animated:(BOOL)animated;
